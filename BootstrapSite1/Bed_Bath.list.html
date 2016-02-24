@@ -1,0 +1,24 @@
+﻿<h3>List of Bed & Bath Deals <a class="btn btn-lg btn-success" href="#" role="button" ng-click="toggleLoading()">Hide Deals</a></h3>
+
+<div ng-repeat="item in items">
+    <div class="col-lg-6">
+        <ul>
+            <li><div ng-init="open($index)">{{item.name}}</div></li>
+            <img ng-src="{{item.src}}"></img>
+            <br></br>
+
+            <span>
+                {{item.description}}
+            </span>
+        </ul>
+    </div>
+    <div class="col-lg-6">
+        <div ng-controller="myctrl" ng-init="setprice()">
+            <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+            <br></br>
+
+        </div>
+    </div>
+
+</div>
+

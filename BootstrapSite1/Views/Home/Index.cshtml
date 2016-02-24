@@ -1,0 +1,99 @@
+﻿<div ng-app="myapp">
+    <div class="jumbotron" ng-app="myapp" ng-controller="MyCtrlPop">
+        <h1>Deals <span class="glyphicon glyphicon-thumbs-up"></span></h1>
+        <p class="lead">Welcome to world of deals which can fullfill everyone wishes at low price and  help save money. </p>
+        <p class="alert alert-info ">Sign up today to get latest updates on Deals</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button" ng-click='toggleModal()'>Sign up today</a></p>
+        <modal-dialog show='modalShown' width='500px' height='40%'>
+            <p class="alert alert-info ">Enter Email Address to get latest Deals<span class="glyphicon  glyphicon-bell"></span>  <p>
+                <br />
+               
+                <div ng-form="myForm" style="text-align:center " >
+                    <input type="text" name="input" ng-model="text" required ng-pattern="pattern" />
+                    <span class="error" ng-show="myForm.input.$error.required">
+                        Required!
+                    </span>
+                    <span class="error" ng-show="myForm.input.$error.pattern">
+                        Not valid email!
+                    </span>
+                    <input type="button" value="Submit" ng-click="toggleModal()" ng-disabled="myForm.$invalid">
+                </div>
+        </modal-dialog>
+    </div>
+
+    <div class="row marketing">
+        <div class="col-lg-6">
+            <h4><span class="alert alert-warning">Computer Deals</span></h4> @*<a class="btn btn-primary" href="#"</a>*@
+            <br />
+            <div style="height:100px;  ">This section display all the latest Computer Related Deals <br /> <a class="btn btn-info " ui-sref="computerDeal"> Deals Unlocked.. </a> </div>
+
+            <h4><span class="alert alert-warning">Toys Deals</span></h4> @*<a class="btn btn-primary" href="#"</a>*@
+            <br />
+            <div style="height:100px;">
+                This section display all the latest Toys  Related Deals <br /><a class="btn btn-info " ui-sref="toys"> Deals Unlocked.. </a>
+            </div>
+
+            <h4><span class="alert alert-warning">Bed & Bath Deals</span></h4> @*<a class="btn btn-primary" href="#"</a>*@
+            <br />
+            <div style="height:100px;  ">
+                This section display all the latest Bed & Bath Related Deals<br /><a class="btn btn-info " ui-sref="bed"> Deals Unlocked.. </a>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <h4><span class="alert alert-warning ">Men Products Deals</span></h4> @*<a class="btn btn-primary" href="#"</a>*@
+            <br />
+            <div style="height:100px;  ">This section display all the latest Men Products Related Deals <br /> <a class="btn btn-info " ui-sref="men_product"> deals unlocked.. </a> </div>
+
+            <h4><span class="alert alert-warning">Women Products Deals</span></h4> @*<a class="btn btn-primary" href="#"</a>*@
+            <br />
+            <div style="height:100px;">
+                This section display all the latest Woman Products  Related Deals <br /><a class="btn btn-info " ui-sref="women_product"> Deals Unlocked.. </a>
+            </div>
+
+            <h4><span class="alert alert-warning">Misc Deals</span></h4> @*<a class="btn btn-primary" href="#"</a>*@
+            <br />
+            <div style="height:100px;  ">
+                This section display all the latest Misc Related Deals<br /><a class="btn btn-info " ui-sref="misc"> Deals Unlocked.. </a>
+            </div>
+            @*<div ng-controller="myctrl">
+                        <div class="span12">
+                            <input ng-model="chartConfig.title.text">
+                            <button ng-click="addSeries()">Add Series</button>
+                            <button ng-click="addPoints()">Add Points to Random Series</button>
+                            <button ng-click="removeRandomSeries()">Remove Random Series</button>
+                            <button ng-click="swapChartType()">Line/Bar</button>
+                            <button ng-click="toggleLoading()">Loading?</button>
+                        </div>
+                        <div class="row">
+                            <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+                        </div>
+                    </div>
+                </div>
+            *@
+        </div>
+
+
+
+        @*<div class="span12">
+                <input ng-model="chartConfig.title.text">
+                @*<button ng-click="addSeries()">Add Series</button>
+                <button ng-click="addPoints()">Add Points to Random Series</button>
+                <button ng-click="removeRandomSeries()">Remove Random Series</button>
+                <button ng-click="swapChartType()">Line/Bar</button>
+                <button ng-click="toggleLoading()">Loading?</button>
+            </div>*@
+        <div>
+
+            <div ui-view></div>
+
+
+
+
+        </div>
+        <div class="footer">
+            <p>&copy; Company 2014</p>
+        </div>
+
+    </div> <!-- /container -->
+</div>
